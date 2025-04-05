@@ -21,3 +21,10 @@ class CNN(nn.Module):
         x = self.act(self.fc2(x))
         x = self.fc3(x)
         return x
+
+class Identity(nn.Module):
+    def __init__(self):
+        super(Identity, self).__init__()
+    
+    def forward(self, x):
+        return x

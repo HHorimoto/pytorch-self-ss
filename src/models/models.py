@@ -12,15 +12,15 @@ class CNN(nn.Module):
         self.l3 = nn.Linear(1024*widen_factor, 10)
         self.act = nn.ReLU()
         self.pool = nn.MaxPool2d(2, 2)
-    
+
     def forward(self, x):
-        x = self.pool(self.act(self.conv1(x)))
-        x = self.pool(self.act(self.conv2(x)))
-        x = x.view(x.size()[0], -1)
-        x = self.act(self.l1(x))
-        x = self.act(self.l2(x))
-        x = self.l3(x)
-        return x
+        h = self.pool(self.act(self.conv1(x)))
+        h = self.pool(self.act(self.conv2(h)))
+        h = h.view(h.size()[0], -1)
+        h = self.act(self.l1(h))
+        h = self.act(self.l2(h))
+        h = self.l3(h)
+        return h
 
 class Identity(nn.Module):
     def __init__(self):

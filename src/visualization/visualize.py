@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 
-def plot(train, test, metric):
+def plot(results: dict, metric: str):
     plt.figure()
     plt.xlabel('epoch')
     plt.ylabel(metric)
-    plt.plot(train, label='train')
-    plt.plot(test, label='test')
+    for key, value in results.items():
+        plt.plot(value, label=key)
     plt.legend()
     plt.savefig(metric+'.png')

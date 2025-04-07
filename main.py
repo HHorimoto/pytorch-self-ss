@@ -41,6 +41,10 @@ def main():
     coach = CoachSimCLR(net, unsup_loader, criterion, optimizer, LR, device, NUM_EPOCH, WARMUP_EPOCH)
     coach.train()
 
+    plot({"train": coach.train_loss,}, "loss")
+
+    torch.save(net.encoder.state_dict(), "cifar100_pre_train.pth")
+
 if __name__ == "__main__":
     fix_seed()
     main()

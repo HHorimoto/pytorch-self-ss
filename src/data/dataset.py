@@ -28,8 +28,6 @@ class TransformsSimCLR:
         k = self.transform(x)
         return [q, k]
 
-ssl_transform = TransformsSimCLR()
-
 def create_dataset(root='./data/', download=True, batch_size=256):
     ssl_transform = TransformsSimCLR()
     unsup_trainset = datasets.CIFAR100(root=root, train=True, download=download, transform=ssl_transform)

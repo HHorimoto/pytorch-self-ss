@@ -28,7 +28,7 @@ class TransformsSimCLR:
         k = self.transform(x)
         return [q, k]
 
-def create_dataset(root='./data/', download=True, batch_size=256):
+def create_unsupdataset(root='./data/', download=True, batch_size=256):
     ssl_transform = TransformsSimCLR()
     unsup_trainset = datasets.CIFAR100(root=root, train=True, download=download, transform=ssl_transform)
     unsup_loader = torch.utils.data.DataLoader(unsup_trainset, batch_size=batch_size, shuffle=True,

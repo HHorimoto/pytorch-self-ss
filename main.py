@@ -6,7 +6,7 @@ import torch.optim as optim
 import yaml
 import matplotlib.pyplot as plt
 
-from src.data.dataset import create_dataset
+from src.data.dataset import create_unsupdataset
 from src.utils.seeds import fix_seed
 from src.visualization.visualize import plot
 from src.models.models import CNN, SimCLR
@@ -27,7 +27,7 @@ def main():
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     
-    unsup_loader = create_dataset(root=ROOT, download=True, batch_size=BATCH_SIZE)
+    unsup_loader = create_unsupdataset(root=ROOT, download=True, batch_size=BATCH_SIZE)
 
     encoder = CNN(widen_factor=1).to(device) 
     net = SimCLR(encoder).to(device) 

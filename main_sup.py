@@ -29,7 +29,7 @@ def main():
 
     net = CNN(widen_factor=1).to(device) 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(net.parameters(), lr=LR, momentum=0.9)
+    optimizer = optim.Adam(net.parameters(), lr=LR)
 
     coach = Coach(net, train_loader, test_loader, criterion, optimizer, LR, device, NUM_EPOCH)
     coach.train_test()

@@ -16,7 +16,7 @@ from src.models.coachs import CoachSimCLR
 
 def main():
 
-    with open('config_semi.yaml') as file:
+    with open('./config/config_semi.yaml') as file:
         config_file = yaml.safe_load(file)
     print(config_file)
 

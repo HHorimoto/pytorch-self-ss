@@ -48,3 +48,11 @@ class SimCLR(nn.Module):
         z_i = self.projector(h_i)
         z_j = self.projector(h_j)
         return z_i, z_j
+
+class LogisticRegression(nn.Module):
+    def __init__(self, n_features, n_classes):
+        super(LogisticRegression, self).__init__()
+        self.model = nn.Linear(n_features, n_classes)
+    
+    def forward(self, x):
+        return self.model(x)

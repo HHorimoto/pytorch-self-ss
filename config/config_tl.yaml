@@ -1,0 +1,6 @@
+config:
+  root: "./data/"
+  num_epoch: 30
+  lr: 0.001
+  batch_size: 16
+  ssl_model: "./models/cifar100_pre_train.pth"

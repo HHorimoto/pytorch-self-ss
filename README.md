@@ -23,11 +23,11 @@ The table and figure below present the experimental results.
 
 The table shows that **SSL(ft)** and **SSL(tl)** achieves higher accuracy than Supervised Learning **(Sup)**.
 
-|         | Accuracy | Time (s) |
-| ------- | :------: | -------- |
-| Sup     |  0.4448  | 56.133   |
-| SSL(ft) |  0.4829  | 46.424   |
-| SSL(tl) |  0.5072  | 43.463   |
+|         |  Accuracy  | Time (s)   |
+| ------- | :--------: | ---------- |
+| Sup     |   0.4448   | 56.133     |
+| SSL(ft) |   0.4829   | 46.424     |
+| SSL(tl) | **0.5072** | **43.463** |
 
 #### Reference
 [1] [https://github.com/machine-perception-robotics-group/MPRGDeepLearningLectureNotebook/blob/master/11_cnn_pytorch/14_self_supervised_learning.ipynb](https://github.com/machine-perception-robotics-group/MPRGDeepLearningLectureNotebook/blob/master/11_cnn_pytorch/14_self_supervised_learning.ipynb)
